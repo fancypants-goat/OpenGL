@@ -1,3 +1,4 @@
+using OpenGL;
 
 
 
@@ -7,7 +8,12 @@ public class Launch
 {
     public static void Main(string[] args)
     {
-        Game program = new(800, 600, "title");
+        WindowSettings.SetWindowState(WindowState.Maximized);
+        WindowSettings.SetWindowTitle("3D game");
+        WindowSettings.SetWindowLocation(1);
+        WindowSettings.SetWindowFocus(0);
+
+        Game program = new();
         program.Run();
     }
 }
