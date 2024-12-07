@@ -83,13 +83,4 @@ public class Game : Program
             Pause();
         }
     }
-
-
-    public override void AfterDraw()
-    {
-        base.AfterDraw();
-
-
-		Debug.DrawLine(new Vector3(10, 30, 0), new Vector3(0, 30, -10), Color.Green);
-    }
 }
