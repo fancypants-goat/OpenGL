@@ -22,8 +22,8 @@ public class Game : Program
     {
         player = new Player(new Vector3(0, 30, -10), new Vector3(10, 17, 10), new Vector3(0, 0, 0), Color.FromArgb(255, 255, 50, 50), 10, -25, 20, 27);
 
-        Texture boxTexture = new(Assets.GetFilePath("Textures/container.png"), true);
-        GameObject floor = new("floor", new Vector3(0), new Vector3(100, 50, 100), new Vector3(0, 0, 0), new Texture(Assets.GetFilePath("Textures/wall.jpg"), true));
+        Texture boxTexture = Texture.FromFile(Assets.GetFilePath("Textures/container.png"), true);
+        GameObject floor = new("floor", new Vector3(0), new Vector3(100, 50, 100), new Vector3(0, 0, 0), Texture.FromFile(Assets.GetFilePath("Textures/wall.jpg"), true));
         floor.AddComponent<BoxCollider>();
         GameObject boxes = new("boxes", false);
         new GameObject("box1", new Vector3(-40, 31, 30), new Vector3(12, 12, 12), new Vector3(90, 30, 0), boxTexture).AddComponent<BoxCollider>().gameObject.SetParent(boxes);
@@ -33,7 +33,7 @@ public class Game : Program
         new GameObject("box5", new Vector3(-85, 50, 35), new Vector3(12, 12, 12), new Vector3(90, 20, 0), boxTexture).AddComponent<BoxCollider>().gameObject.SetParent(boxes);
         GameObject view = new("view_platform", new Vector3(-95, 60, 65), new Vector3(20, 20, 10), new Vector3(90, 0, 0), boxTexture, Color.FromArgb(100, 255, 255, 255));
         view.AddComponent<BoxCollider>().gameObject.SetParent(boxes);
-        _ = new Entity("lil_box", new Vector3(20, 33, 10), new Vector3(8, 8, 8), new Vector3(0, -40, 0), new Texture(Assets.GetFilePath("Textures/awesomeface.png"), true), 5, -15);
+        _ = new Entity("lil_box", new Vector3(20, 33, 10), new Vector3(8, 8, 8), new Vector3(0, -40, 0), Texture.FromFile(Assets.GetFilePath("Textures/awesomeface.png"), true), 5, -15);
 
         // create some UI BITCHES
         escapeMenu = new("menu", new Vector2(0, 0), new Vector2(100, 100), ModelMode.Stretch, Color.FromArgb(150, Color.Black), isActive:false);
