@@ -21,7 +21,8 @@ public class Game : Program
 
 
         GameObject text = new("text");
-        text.AddComponent<UITransform>(new Vector2(500, 500), new Vector2(0, 0), ModelMode.Static);
+        text.transform = text.AddComponent<UITransform>(new Vector2(100, 100), new Vector2(0, 200), ModelMode.Distance);
+        text.AddComponent<UIRenderer>(Color.Gray);
         text.AddComponent<Text>(Assets.GetFilePath("Roboto-Black.ttf"), 
         "abcdefghijklmnopqrstuvwxyz\nABCDEFGHIJKLMNOPQRSTUVWXYZ\n0123456789\n!@#$%^&*()-_=+[{}];:`~'\",<.>/?\néëèáäàúüùíïìóöò\nThe quick brown fox jumps over the lazy dog\nHello, world!",
         32, Color.White);

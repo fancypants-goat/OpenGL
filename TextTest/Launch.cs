@@ -10,7 +10,6 @@ public class Launch
     {
         WindowSettings.SetWindowSize((800, 600));
         WindowSettings.SetWindowTitle("Game Window");
-        WindowSettings.SetWindowLocation(0);
 
         Game program = new();
         program.Run();
