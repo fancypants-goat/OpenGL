@@ -49,7 +49,7 @@ public class Game : Program
         Button button2 = new("resume_button", new Vector2(35, 40), new Vector2(30, 10), ModelMode.Stretch, Color.White, action:Pause, isActive:true);
         button2.SetParent(escapeMenu);
         button2.GetComponent<UIRenderer>().enabled = true;
-        button2.AddComponent<Text>(Assets.GetFilePath("Fonts/Roboto-Black.ttf"), "Resume", 32);
+        button2.AddComponent<Text>(Assets.GetFilePath("Fonts/Roboto-Black.ttf"), "Resume", 32, Color.White);
 
         CursorState = CursorState.Grabbed;
     }
